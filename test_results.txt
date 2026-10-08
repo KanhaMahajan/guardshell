@@ -1,0 +1,48 @@
+=== Basic commands ===
+  PASS  whoami
+  PASS  date
+  PASS  echo
+  PASS  pwd
+=== File operations ===
+  PASS  touch + write
+  PASS  cat file
+=== Pipes ===
+  PASS  pipe ls|wc
+  PASS  pipe grep
+=== Redirection ===
+  PASS  output redirect
+  PASS  read redirect
+=== Builtins ===
+  PASS  help
+  PASS  cd + pwd
+=== Security ===
+  PASS  risk low
+  PASS  risk high
+  PASS  status
+  PASS  attack syscall
+  PASS  attack privesc
+
+================================
+Tests passed: 17
+Tests failed: 0
+================================
+sudo apt install -y git
+
+git config --global user.name "Hp Kanha"
+git config --global user.email "hpkanha@example.com"
+
+cat > .gitignore <<'EOF'
+guardshell
+*.o
+*.log
+EOF
+
+git init
+git add .
+git commit -m "GuardShell v1.1 - Security-aware Linux shell with risk engine, seccomp, Landlock, cgroups"
+
+# github.com/new pe repo banao → guardshell, public
+
+git branch -M main
+git remote add origin https://github.com/TERA_USERNAME/guardshell.git
+git push -u origin main
